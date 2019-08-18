@@ -59,7 +59,9 @@ namespace MOBISDAS.Global
         //LOG 파일 생성
         public static DateTime Date_Time = DateTime.Now;        
         public static Filehandle fhLog = new Filehandle("./LOG/" +DateTime.Now.Year + "_" + DateTime.Now.Month + "/LOG" + DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + ".TXT");
-        public static Filehandle fh_Err_Log = new Filehandle("./Err_LOG/" + DateTime.Now.Year + "_" + DateTime.Now.Month + "/Err_LOG" + DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + ".TXT");      
+        public static Filehandle fh_Err_Log = new Filehandle("./Err_LOG/" + DateTime.Now.Year + "_" + DateTime.Now.Month + "/Err_LOG" + DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + ".TXT");
+
+        public static string Test = "Git";
 
         public static void Initialization()
         {
