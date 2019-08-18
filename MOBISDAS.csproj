@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1EEA9F1-F6B2-4B61-92B1-31017E2B4A35}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOBISDAS</RootNamespace>
+    <AssemblyName>MOBISDAS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PPC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dabom.TagAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Dabom.TagAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\clsFilehandle.cs" />
+    <Compile Include="Common\Error.cs" />
+    <Compile Include="Common\IniFile.cs" />
+    <Compile Include="Common\NetRemoting.cs" />
+    <Compile Include="Common\RegistryInfo.cs" />
+    <Compile Include="Common\TagServerMarshalByRefObject.cs" />
+    <Compile Include="Common\WorkStatusList.cs" />
+    <Compile Include="Databse\DBOleConnection.cs" />
+    <Compile Include="Databse\DBOracleConnection.cs" />
+    <Compile Include="Databse\DBSqlConnection.cs" />
+    <Compile Include="Databse\parameterMaster.cs" />
+    <Compile Include="Databse\Procedure.cs" />
+    <Compile Include="Databse\ivizConn.cs" />
+    <Compile Include="Databse\parameter.cs" />
+    <Compile Include="Forms\frmLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLoad.Designer.cs">
+      <DependentUpon>frmLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkBoard.designer.cs">
+      <DependentUpon>frmWorkBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkInspection.Designer.cs">
+      <DependentUpon>frmWorkInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_Sub_Tool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_Sub_Tool.Designer.cs">
+      <DependentUpon>frmWorkKeeper_Sub_Tool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_Sub_Barcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_Sub_Barcode.Designer.cs">
+      <DependentUpon>frmWorkKeeper_Sub_Barcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSubWork_Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSubWork_Config.Designer.cs">
+      <DependentUpon>frmSubWork_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkStart.Designer.cs">
+      <DependentUpon>frmWorkStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMsg.Designer.cs">
+      <DependentUpon>frmMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWork.Designer.cs">
+      <DependentUpon>frmWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mdiMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mdiMain.Designer.cs">
+      <DependentUpon>mdiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkTool.Designer.cs">
+      <DependentUpon>frmWorkTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper.Designer.cs">
+      <DependentUpon>frmWorkKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWork_Start_FEM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWork_Start_FEM.Designer.cs">
+      <DependentUpon>frmWork_Start_FEM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWork_Start_CPM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWork_Start_CPM.Designer.cs">
+      <DependentUpon>frmWork_Start_CPM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkDailyInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkDailyInspection.Designer.cs">
+      <DependentUpon>frmWorkDailyInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_Bad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_Bad.Designer.cs">
+      <DependentUpon>frmWorkKeeper_Bad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_BadHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkKeeper_BadHist.Designer.cs">
+      <DependentUpon>frmWorkKeeper_BadHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkElectricTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkElectricTool.Designer.cs">
+      <DependentUpon>frmWorkElectricTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\CustomCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Global\CustomCheckBox.designer.cs">
+      <DependentUpon>CustomCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Global.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frmKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmKeyboard.designer.cs">
+      <DependentUpon>frmKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmNumer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmNumer.designer.cs">
+      <DependentUpon>frmNumer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\itCommandButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\itCommandButton.designer.cs">
+      <DependentUpon>itCommandButton.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\frmMsg.resx">
+      <DependentUpon>frmMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSubWork_Config.resx">
+      <DependentUpon>frmSubWork_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWork.resx">
+      <DependentUpon>frmWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkBoard.resx">
+      <DependentUpon>frmWorkBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkInspection.resx">
+      <DependentUpon>frmWorkInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkKeeper_Sub_Barcode.resx">
+      <DependentUpon>frmWorkKeeper_Sub_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkKeeper_Sub_Tool.resx">
+      <DependentUpon>frmWorkKeeper_Sub_Tool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkStart.resx">
+      <DependentUpon>frmWorkStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mdiMain.resx">
+      <DependentUpon>mdiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkTool.resx">
+      <DependentUpon>frmWorkTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkKeeper.resx">
+      <DependentUpon>frmWorkKeeper.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWork_Start_FEM.resx">
+      <DependentUpon>frmWork_Start_FEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWork_Start_CPM.resx">
+      <DependentUpon>frmWork_Start_CPM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkDailyInspection.resx">
+      <DependentUpon>frmWorkDailyInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkKeeper_Bad.resx">
+      <DependentUpon>frmWorkKeeper_Bad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkKeeper_BadHist.resx">
+      <DependentUpon>frmWorkKeeper_BadHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkElectricTool.resx">
+      <DependentUpon>frmWorkElectricTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\frmKeyboard.resx">
+      <DependentUpon>frmKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmNumer.resx">
+      <DependentUpon>frmNumer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="bin\Debug\INI\db.ini" />
+    <None Include="bin\Debug\INI\FILE_UPDATE.ini" />
+    <None Include="bin\Debug\MOBISDAS.exe.config" />
+    <None Include="bin\Debug\MOBISDAS.vshost.exe.config" />
+    <None Include="bin\Debug\WindowsFormsApplication1.vshost.exe.manifest" />
+    <None Include="bin\Release\INI\db.ini" />
+    <None Include="bin\Release\INI\FILE_UPDATE.ini" />
+    <None Include="bin\Release\MOBISDAS.exe.config" />
+    <None Include="bin\Release\MOBISDAS.vshost.exe.config" />
+    <None Include="bin\Release\MOBISDAS.vshost.exe.manifest" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MOBIS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AUTOSTART.exe" />
+    <Content Include="bin\Debug\BARCODE\2013_4\BARCODE2013_4_19.TXT" />
+    <Content Include="bin\Debug\BARCODE\2013_4\BARCODE2013_4_22.TXT" />
+    <Content Include="bin\Debug\BARCODE\2013_4\BARCODE2013_4_24.TXT" />
+    <Content Include="bin\Debug\BARCODE\2013_4\BARCODE2013_4_27.TXT" />
+    <Content Include="bin\Debug\COMMONDLL.dll" />
+    <Content Include="bin\Debug\Dabom.TagAdapter.dll" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_12.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_13.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_14.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_15.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_16.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_19.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_20.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_21.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_22.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_23.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_26.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_27.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_28.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_30.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_6.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_7.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_11\Err_LOG2012_11_8.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_10.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_11.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_12.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_13.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_14.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_15.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_16.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_17.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_18.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_19.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_20.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_21.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_22.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_23.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_26.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_27.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_28.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_29.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_3.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_30.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_31.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_4.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_5.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_6.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_7.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_8.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2012_12\Err_LOG2012_12_9.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_10.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_11.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_12.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_14.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_15.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_18.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_2.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_21.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_22.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_23.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_24.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_25.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_26.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_29.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_3.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_31.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_4.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_5.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_6.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_7.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_8.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_1\Err_LOG2013_1_9.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_2\Err_LOG2013_2_1.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_2\Err_LOG2013_2_14.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_2\Err_LOG2013_2_18.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_2\Err_LOG2013_2_19.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_2\Err_LOG2013_2_20.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_2\Err_LOG2013_2_22.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_12.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_13.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_19.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_20.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_21.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_25.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_26.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_27.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_7.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_3\Err_LOG2013_3_8.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_19.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_2.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_22.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_24.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_27.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_29.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_3.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_4\Err_LOG2013_4_4.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_5\Err_LOG2013_5_15.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_5\Err_LOG2013_5_22.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_5\Err_LOG2013_5_29.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_5\Err_LOG2013_5_3.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_6\Err_LOG2013_6_3.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_6\Err_LOG2013_6_5.TXT" />
+    <Content Include="bin\Debug\Err_LOG\2013_7\Err_LOG2013_7_31.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_12.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_13.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_14.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_15.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_16.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_19.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_20.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_21.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_22.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_23.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_26.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_27.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_28.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_30.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_6.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_7.TXT" />
+    <Content Include="bin\Debug\LOG\2012_11\LOG2012_11_8.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_10.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_11.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_12.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_13.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_14.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_15.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_16.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_17.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_18.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_19.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_20.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_21.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_22.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_23.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_26.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_27.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_28.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_29.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_3.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_30.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_31.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_4.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_5.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_6.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_7.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_8.TXT" />
+    <Content Include="bin\Debug\LOG\2012_12\LOG2012_12_9.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_10.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_11.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_12.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_14.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_15.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_18.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_2.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_21.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_22.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_23.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_24.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_25.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_26.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_29.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_3.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_31.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_4.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_5.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_6.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_7.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_8.TXT" />
+    <Content Include="bin\Debug\LOG\2013_1\LOG2013_1_9.TXT" />
+    <Content Include="bin\Debug\LOG\2013_2\LOG2013_2_1.TXT" />
+    <Content Include="bin\Debug\LOG\2013_2\LOG2013_2_14.TXT" />
+    <Content Include="bin\Debug\LOG\2013_2\LOG2013_2_18.TXT" />
+    <Content Include="bin\Debug\LOG\2013_2\LOG2013_2_19.TXT" />
+    <Content Include="bin\Debug\LOG\2013_2\LOG2013_2_20.TXT" />
+    <Content Include="bin\Debug\LOG\2013_2\LOG2013_2_22.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_12.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_13.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_19.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_20.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_21.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_25.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_26.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_27.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_7.TXT" />
+    <Content Include="bin\Debug\LOG\2013_3\LOG2013_3_8.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_19.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_2.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_22.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_24.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_27.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_29.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_3.TXT" />
+    <Content Include="bin\Debug\LOG\2013_4\LOG2013_4_4.TXT" />
+    <Content Include="bin\Debug\LOG\2013_5\LOG2013_5_15.TXT" />
+    <Content Include="bin\Debug\LOG\2013_5\LOG2013_5_22.TXT" />
+    <Content Include="bin\Debug\LOG\2013_5\LOG2013_5_29.TXT" />
+    <Content Include="bin\Debug\LOG\2013_5\LOG2013_5_3.TXT" />
+    <Content Include="bin\Debug\LOG\2013_6\LOG2013_6_3.TXT" />
+    <Content Include="bin\Debug\LOG\2013_6\LOG2013_6_5.TXT" />
+    <Content Include="bin\Debug\LOG\2013_7\LOG2013_7_31.TXT" />
+    <Content Include="bin\Debug\MOBISDAS.exe" />
+    <Content Include="bin\Debug\MOBISDAS.pdb" />
+    <Content Include="bin\Debug\MOBISDAS.vshost.exe" />
+    <Content Include="bin\Release\BARCODE\2013_4\BARCODE2013_4_19.TXT" />
+    <Content Include="bin\Release\BARCODE\2013_4\BARCODE2013_4_22.TXT" />
+    <Content Include="bin\Release\BARCODE\2013_4\BARCODE2013_4_23.TXT" />
+    <Content Include="bin\Release\BARCODE\2013_4\BARCODE2013_4_24.TXT" />
+    <Content Include="bin\Release\BARCODE\2013_4\BARCODE2013_4_27.TXT" />
+    <Content Include="bin\Release\Dabom.TagAdapter.dll" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_12.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_13.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_14.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_15.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_16.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_19.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_20.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_21.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_22.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_23.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_26.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_27.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_28.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_30.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_6.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_7.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_11\Err_LOG2012_11_8.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_10.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_11.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_12.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_13.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_14.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_15.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_16.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_17.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_18.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_19.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_20.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_21.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_22.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_23.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_26.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_27.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_28.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_29.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_3.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_30.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_31.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_4.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_5.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_6.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_7.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_8.TXT" />
+    <Content Include="bin\Release\Err_LOG\2012_12\Err_LOG2012_12_9.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_11\Err_LOG2013_11_8.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_10.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_11.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_12.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_14.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_15.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_18.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_2.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_21.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_22.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_23.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_24.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_25.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_26.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_29.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_3.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_31.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_4.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_5.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_6.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_7.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_8.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_1\Err_LOG2013_1_9.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_2\Err_LOG2013_2_1.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_2\Err_LOG2013_2_14.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_2\Err_LOG2013_2_18.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_2\Err_LOG2013_2_19.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_2\Err_LOG2013_2_20.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_2\Err_LOG2013_2_22.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_12.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_13.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_19.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_20.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_21.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_25.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_26.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_27.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_7.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_3\Err_LOG2013_3_8.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_19.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_2.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_22.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_23.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_24.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_27.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_29.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_3.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_4\Err_LOG2013_4_4.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_5\Err_LOG2013_5_22.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_5\Err_LOG2013_5_29.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_5\Err_LOG2013_5_3.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_5\Err_LOG2013_5_30.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_6\Err_LOG2013_6_19.TXT" />
+    <Content Include="bin\Release\Err_LOG\2013_6\Err_LOG2013_6_3.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_12.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_13.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_14.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_15.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_16.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_19.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_20.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_21.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_22.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_23.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_26.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_27.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_28.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_30.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_6.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_7.TXT" />
+    <Content Include="bin\Release\LOG\2012_11\LOG2012_11_8.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_10.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_11.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_12.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_13.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_14.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_15.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_16.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_17.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_18.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_19.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_20.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_21.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_22.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_23.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_26.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_27.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_28.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_29.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_3.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_30.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_31.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_4.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_5.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_6.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_7.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_8.TXT" />
+    <Content Include="bin\Release\LOG\2012_12\LOG2012_12_9.TXT" />
+    <Content Include="bin\Release\LOG\2013_11\LOG2013_11_8.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_10.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_11.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_12.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_14.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_15.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_18.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_2.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_21.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_22.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_23.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_24.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_25.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_26.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_29.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_3.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_31.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_4.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_5.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_6.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_7.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_8.TXT" />
+    <Content Include="bin\Release\LOG\2013_1\LOG2013_1_9.TXT" />
+    <Content Include="bin\Release\LOG\2013_2\LOG2013_2_1.TXT" />
+    <Content Include="bin\Release\LOG\2013_2\LOG2013_2_14.TXT" />
+    <Content Include="bin\Release\LOG\2013_2\LOG2013_2_18.TXT" />
+    <Content Include="bin\Release\LOG\2013_2\LOG2013_2_19.TXT" />
+    <Content Include="bin\Release\LOG\2013_2\LOG2013_2_20.TXT" />
+    <Content Include="bin\Release\LOG\2013_2\LOG2013_2_22.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_12.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_13.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_19.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_20.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_21.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_25.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_26.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_27.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_7.TXT" />
+    <Content Include="bin\Release\LOG\2013_3\LOG2013_3_8.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_19.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_2.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_22.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_23.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_24.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_27.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_29.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_3.TXT" />
+    <Content Include="bin\Release\LOG\2013_4\LOG2013_4_4.TXT" />
+    <Content Include="bin\Release\LOG\2013_5\LOG2013_5_22.TXT" />
+    <Content Include="bin\Release\LOG\2013_5\LOG2013_5_29.TXT" />
+    <Content Include="bin\Release\LOG\2013_5\LOG2013_5_3.TXT" />
+    <Content Include="bin\Release\LOG\2013_5\LOG2013_5_30.TXT" />
+    <Content Include="bin\Release\LOG\2013_6\LOG2013_6_19.TXT" />
+    <Content Include="bin\Release\LOG\2013_6\LOG2013_6_3.TXT" />
+    <Content Include="bin\Release\MOBISDAS.pdb" />
+    <Content Include="bin\Release\MOBISDAS.vshost.exe" />
+    <Content Include="PPC.ico" />
+    <Content Include="SYNC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\IMG\" />
+    <Folder Include="bin\Release\IMG\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
